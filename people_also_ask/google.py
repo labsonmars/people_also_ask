@@ -47,7 +47,8 @@ def search(keyword: str) -> Optional[BeautifulSoup]:
     try:
         with semaphore:
             time.sleep(0.5)  # be nice with google :)
-            response = SESSION.get(URL, params=params, headers=HEADERS)
+            response = requests.get(URL, headers=headers, params=params)
+            #response = SESSION.get(URL, params=params, headers=HEADERS)
     except Exception:
         raise GoogleSearchRequestFailedError(URL, keyword)
     if response.status_code != 200:
