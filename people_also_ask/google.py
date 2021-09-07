@@ -20,7 +20,7 @@ from people_also_ask.exceptions import (
 from people_also_ask.tools import CallingSemaphore
 
 
-URL = "http://www.google.fr/search"
+URL = "https://www.google.fr/search"
 HEADERS = {
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     " AppleWebKit/537.36 (KHTML, like Gecko) "
