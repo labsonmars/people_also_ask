@@ -20,7 +20,7 @@ from people_also_ask.exceptions import (
 from people_also_ask.tools import CallingSemaphore
 
 
-URL = "http://www.google.fr/search?cr=countryFR&lr=lang_fr"
+URL = "http://www.google.fr/search"
 HEADERS = {
     'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     " AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -43,7 +43,7 @@ semaphore = CallingSemaphore(
 @retryable(3)
 def search(keyword: str) -> Optional[BeautifulSoup]:
     """return html parser of google search result"""
-    params = {"q": keyword}
+    params = {"q": keyword, "cr": countryFR, "lr": lang_fr}
     try:
         with semaphore:
             time.sleep(0.5)  # be nice with google :)
