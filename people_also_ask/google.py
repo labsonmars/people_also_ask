@@ -95,6 +95,7 @@ def get_related_questions(text: str, max_nb_questions: Optional[int] = None):
 
     :param str text: text to search
     """
+    print(URL)
     if max_nb_questions is None:
         return _get_related_questions(text)
     nb_question_regenerated = 0
