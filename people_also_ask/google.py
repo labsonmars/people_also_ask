@@ -43,7 +43,7 @@ semaphore = CallingSemaphore(
 @retryable(3)
 def search(keyword: str) -> Optional[BeautifulSoup]:
     """return html parser of google search result"""
-    params = {"q": keyword, "cr": countryFR, "lr": lang_fr}
+    params = {"q": keyword, "cr": "countryFR", "lr": "lang_fr"}
     try:
         with semaphore:
             time.sleep(0.5)  # be nice with google :)
