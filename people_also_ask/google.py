@@ -50,7 +50,7 @@ def search(keyword: str) -> Optional[BeautifulSoup]:
             response = requests.get(URL, headers=HEADERS, params=params)
             if response.status_code == 200:
                 print("Data collected !")
-            print(response.get_text())                  
+            print(BeautifulSoup(response.text, "html.parser").get_text())                  
             #response = SESSION.get(URL, params=params, headers=HEADERS)
     except Exception:
         raise GoogleSearchRequestFailedError(URL, keyword)
