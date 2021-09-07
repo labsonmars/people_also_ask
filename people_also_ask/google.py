@@ -63,6 +63,7 @@ def _get_related_questions(text: str) -> List[str]:
     :param str text: text to search
     """
     document = search(text)
+    print(document)
     if not document:
         return []
     try:
