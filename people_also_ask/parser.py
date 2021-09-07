@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from operator import attrgetter
 from typing import List, Optional
 from people_also_ask.tools import itemize, tabulate, remove_redundant
-
+import re
 
 FEATURED_SNIPPET_ATTRIBUTES = [
     "response", "heading", "title", "link", "displayed_link",
@@ -14,6 +14,7 @@ FEATURED_SNIPPET_ATTRIBUTES = [
 
 
 def extract_related_questions(document: BeautifulSoup) -> List[str]:
+     print(re.findall(r'related-question-pair\|(.*?)\|"', document))
     div_questions = document.find_all("div", class_="related-question-pair")
     print(div_questions)
     get_text = attrgetter("text")
