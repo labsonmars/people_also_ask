@@ -14,7 +14,7 @@ FEATURED_SNIPPET_ATTRIBUTES = [
 
 
 def extract_related_questions(document: BeautifulSoup) -> List[str]:
-    print(re.findall(r'related-question-pair\|(.*?)\|"', document.get_text()))
+    #print(re.findall(r'related-question-pair\|(.*?)\|"', document.get_text()))
     div_questions = document.find_all("div", class_="related-question-pair")
     get_text = attrgetter("text")
     if not div_questions:
